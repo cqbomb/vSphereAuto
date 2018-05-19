@@ -23,7 +23,7 @@ def vsphere_all_auto(temp_no):
     print('创建主机网络适配器，并且关联端口组...')
     sleep(5)
     edit_nic(VLANID)
-    print('完成vSphere自动化任务！！！')
+    print('完成vSphere自动化任务！！！!')
     return VLANID
 
 if __name__ == '__main__':
