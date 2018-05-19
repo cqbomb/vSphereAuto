@@ -16,13 +16,15 @@ def vsphere_all_auto(temp_no):
         if VLANID in NETID:
             continue
         break
-    print('创建虚拟机CentOS_'+str(VLANID)+'...')
-    clone_vm_from_no(VLANID,temp_no)
     print('创建端口组VLAN' + str(VLANID) + '...')
     create_pg(VLANID)
+
+    print('创建虚拟机CentOS_'+str(VLANID)+'...')
+    clone_vm_from_no(VLANID,temp_no)
+
     print('创建主机网络适配器，并且关联端口组...')
-    sleep(5)
     edit_nic(VLANID)
+
     print('完成vSphere自动化任务！-')
     return VLANID
 
