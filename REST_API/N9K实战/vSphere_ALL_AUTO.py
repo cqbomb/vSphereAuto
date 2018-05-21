@@ -4,7 +4,7 @@ from GET_VM import get_vm_id
 from GET_PortGroup import get_network_id
 from EDIT_PortGroup import edit_nic
 from random import randint
-from time import sleep
+from Edit_PortGroup_VlanID import edit_pg_vlan_id
 
 def vsphere_all_auto(temp_no):
     while True:
@@ -25,11 +25,21 @@ def vsphere_all_auto(temp_no):
     print('创建主机网络适配器，并且关联端口组...')
     edit_nic(VLANID)
 
+    print('编辑端口组VLAN ID - '+str(VLANID)+'...')
+    edit_pg_vlan_id(VLANID)
+
     print('完成vSphere自动化任务！-')
     return VLANID
 
-if __name__ == '__main__':
-    print(vsphere_all_auto(4))
+Choose_VM_Banner = """ 1. OS: CentOS ; CPU: 1 ; RAM: 1
+ 2. OS: CentOS ; CPU: 1 ; RAM: 2
+ 3. OS: CentOS ; CPU: 2 ; RAM: 1
+ 4. OS: CentOS ; CPU: 2 ; RAM: 2
+ Please select the Virtual Machine Template you want to create (1-4)"""
+
+if __name__ == "__main__":
+    Choose_VM_No = input(Choose_VM_Banner+":")
+    print(vsphere_all_auto(int(Choose_VM_No)))
 
 
 
