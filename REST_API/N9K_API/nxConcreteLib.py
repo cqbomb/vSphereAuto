@@ -23,11 +23,11 @@ This is a library of all the Concrete classes that are on a switch.
 """
 """
 # all the import
-from .nxbaseobject import BaseNXPhysObject
+from nxbaseobject import BaseNXPhysObject
 import nxtoolkit as NX
 import copy
-from .nxTable import Table
-from .nxSearch import Searchable
+from nxTable import Table
+from nxSearch import Searchable
 
 
 class ConcreteArp(BaseNXPhysObject):

@@ -25,7 +25,8 @@ import requests
 from requests import Timeout, ConnectionError
 import threading
 import time
-from websocket import create_connection, WebSocketException
+# from websocket import create_connection, WebSocketException
+from socket import create_connection
 import ssl
 
 # Queue library is named "queue" in Python3

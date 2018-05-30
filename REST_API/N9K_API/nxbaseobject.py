@@ -20,8 +20,8 @@
 This module implements the Base Class for creating all of the NX Objects.
 """
 import logging
-from .nxSearch import NxSearch
-from .nxsession import Session
+from nxSearch import NxSearch
+from nxsession import Session
 
 
 class BaseRelation(object):

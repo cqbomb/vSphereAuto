@@ -19,14 +19,14 @@
 """NX Toolkit module for physical objects
 """
 import datetime
-from .nxbaseobject import BaseNXObject, BaseNXPhysModule, BaseInterface
-from .nxConcreteLib import *
-from .nxsession import Session
-from .nxcounters import InterfaceStats
+from nxbaseobject import BaseNXObject, BaseNXPhysModule, BaseInterface
+from nxConcreteLib import *
+from nxsession import Session
+from nxcounters import InterfaceStats
 import logging
 import re
 import copy
-from .nxSearch import Searchable
+from nxSearch import Searchable
 
 
 
@@ -2044,7 +2044,7 @@ class Interface(BaseInterface):
 
         for interface in interface_data:
             if 'l1PhysIf' in interface:
-		attributes = interface['l1PhysIf']['attributes']
+                attributes = interface['l1PhysIf']['attributes']
                 dist_name = str(interface['l1PhysIf']['attributes']['dn'])
                 attributes['dist_name'] = dist_name
                 porttype = str(interface['l1PhysIf']['attributes']['portT'])
@@ -2511,7 +2511,7 @@ class System(BaseNXObject):
         resp = session.get(query_url).json()['imdata']
         for system in resp:
             dev_name = str(system['topSystem']['attributes']['name'])
-            print dev_name
+            print(dev_name)
             return System(session=session, name=dev_name)
 
 

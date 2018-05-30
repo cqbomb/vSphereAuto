@@ -20,11 +20,11 @@
      This is the main module that comprises the NX Toolkit.
 """
 import sys
-from .nxTable import Table
-from .nxphysobject import *
-from .nxbaseobject import BaseNXObject, BaseRelation, BaseInterface
-from .nxsession import Session
-from .nxtoolkitlib import Credentials
+from nxTable import Table
+from nxphysobject import *
+from nxbaseobject import BaseNXObject, BaseRelation, BaseInterface
+from nxsession import Session
+from nxtoolkitlib import Credentials
 import logging
 import json
 import socket
@@ -6818,7 +6818,7 @@ class NdInterface(BaseNXObject):
         if lifetime and not pref_lifetime:
             raise TypeError("Provide both lifetime and preferred lifetime")
         elif lifetime and (int(lifetime) < int(pref_lifetime)):
-            print lifetime, pref_lifetime
+            print(lifetime, pref_lifetime)
             raise TypeError("lifetime must be greater than or equal to "
                             + "preferred lifetime")
         prefix = NdPrefix(self.id, address, lifetime, pref_lifetime)

@@ -29,11 +29,13 @@ def vsphere_all_auto(temp_no):
     print('编辑端口组VLAN ID - '+str(VLANID)+'...')
     edit_pg_vlan_id(VLANID)
 
-    print('开始配置N9K网络')
+    print('='*100)
+    print('开始配置N9K网络:')
     N9K_ALL_AUTO(VLANID)
 
+    print('=' * 100)
     print('完成vSphere自动化任务！-')
-    return VLANID
+    # return VLANID
 
 
 Choose_VM_Banner = """ 1. OS: CentOS ; CPU: 1 ; RAM: 1
